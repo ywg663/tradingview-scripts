@@ -1,0 +1,11 @@
+// This source code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © lonecapital
+
+//@version=4
+study("Price divergence")
+cs=(close-ema(close,20))/ema(close,20)*100
+sm=(ema(close,20)-ema(close,60))/ema(close,60)*100
+ml=(ema(close,60)-ema(close,120))/ema(close,120)*100
+plot(ml,"ml",color.silver,linewidth=3,style=plot.style_histogram)
+plot(sm,"sm",color.red)
+plot(cs,"cs",color.black)
